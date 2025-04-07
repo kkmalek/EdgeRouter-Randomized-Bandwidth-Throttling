@@ -1,3 +1,9 @@
+![Status](https://img.shields.io/badge/status-maintained-brightgreen)
+![Shell](https://img.shields.io/badge/made%20with-bash-blue)
+![License](https://img.shields.io/github/license/kkmalek/EdgeRouter-Randomized-Bandwidth-Throttling)
+![Last commit](https://img.shields.io/github/last-commit/kkmalek/EdgeRouter-Randomized-Bandwidth-Throttling)
+![Issues](https://img.shields.io/github/issues/kkmalek/EdgeRouter-Randomized-Bandwidth-Throttling)
+
 # 🎛️ EdgeRouter Randomized Bandwidth Throttling (Stealth Mode)
 
 This project implements a randomized, time-based internet throttling system on a **Ubiquiti EdgeRouter 4**, designed to simulate intermittent ISP issues during a configurable time window — perfect for parental control or distraction-reduction without obvious blocking.
