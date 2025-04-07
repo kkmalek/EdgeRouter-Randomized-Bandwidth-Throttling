@@ -25,7 +25,6 @@ Copy the following files to `/config/scripts/`:
 - `wan_throttle.sh` – toggles shaping on/off
 - `random_shaper.sh` – runs the randomized logic
 - `wan_throttle_dashboard.sh` – terminal-based status display
-- `gen_status_html.sh` *(optional)* – for generating an HTML dashboard
 - `wan_throttle.log` *(created automatically)*
 
 ### 2. Make all scripts executable
@@ -59,9 +58,6 @@ Run `sudo crontab -e` and add the following:
 
 # Hard kill backup at 6:01 AM to ensure shaping is disabled
 1 6 * * * pkill -f random_shaper.sh && /config/scripts/wan_throttle.sh --off
-
-# (Optional) Regenerate HTML dashboard every minute
-* * * * * /config/scripts/gen_status_html.sh
 ```
 
 ---
@@ -97,7 +93,6 @@ Use this to simulate shaping behavior during the day.
 | `wan_throttle.sh`             | Toggles upload + download shaping on/off using `tc` and `ifb` |
 | `wan_throttle_status.sh`      | Shows current shaping status with color-coded output      |
 | `random_shaper.sh`            | Main logic for randomized on/off cycles overnight         |
-| `gen_status_html.sh`          | Optional: generates a browser-viewable dashboard (HTML)   |
 | `wan_throttle.log`            | Rolling log of all throttle events (auto-generated)       |
 | `post-config.d/ifb-load.sh`   | Ensures `ifb` module is available after router reboot      |
 
@@ -114,16 +109,6 @@ Linux's `tc` (Traffic Control) can shape egress traffic on any interface. To sha
 - Ubiquiti EdgeRouter 4
 - EdgeOS v2.x+
 - `tc`, `modprobe`, and `ifb` support (all included by default)
-
----
-
-## 💬 Questions or Improvements?
-
-Feel free to open an issue or suggest a PR for enhancements like:
-- Per-device shaping
-- Web dashboard interface
-- Telegram/email alerting
-- Multi-router deployment support
 
 ---
 
